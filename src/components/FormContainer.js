@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const FormContainer = ({ children }) => {
+const FormContainer = ({ children, style }) => {
 
     return (
-        <View style={styles.formContainer}>
+        <View style={[styles.formContainer, style]}>
             {children}
         </View>
     );
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         width: '90%',
         backgroundColor: '#fff',
         borderRadius: 16,
-        paddingHorizontal: 36,
+        paddingHorizontal: 30,
     },
 });
 

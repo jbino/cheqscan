@@ -3,7 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import LoginScreen from '../screens/LoginScreen';
+import LoginScreen from '../screens/auth/LoginScreen';
+import RecoverScreen from '../screens/auth/RecoverScreen';
+import RecoverUserScreen from '../screens/auth/RecoverUserScreen';
+import RecoverPwdScreen from '../screens/auth/RecoverPwdScreen';
+import RecoverPwdCodeScreen from '../screens/auth/RecoverPwdCodeScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +22,10 @@ const AuthStack = () => {
                 }
             }}>
                 <Stack.Screen name="LoginScreen" component={LoginScreen} />
+                <Stack.Screen name="RecoverScreen" component={RecoverScreen} />
+                <Stack.Screen name="RecoverUserScreen" component={RecoverUserScreen} />
+                <Stack.Screen name="RecoverPwdScreen" component={RecoverPwdScreen} />
+                <Stack.Screen name="RecoverPwdCodeScreen" component={RecoverPwdCodeScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

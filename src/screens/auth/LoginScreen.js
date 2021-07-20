@@ -1,19 +1,13 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { Logo, PasswordHidden, Scan, User } from '../assets/images/icons';
-import { Button, FormContainer, Input } from '../components/';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { PasswordHidden, Scan, User } from '../../assets/images/icons';
+import { BannerAuth, Button, FormContainer, Input } from '../../components';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
 
     return (
         <>
-            <View style={{ alignItems: 'center' }}>
-                <Image
-                    source={require('../assets/images/background-login.jpg')}
-                    style={styles.imgBanner}
-                />
-                <Logo style={{ position: 'absolute', top: 42 }} width='300' heigth='200' />
-            </View>
+            <BannerAuth />
 
             <FormContainer>
                 <Text style={styles.title}>Iniciar Sesión</Text>
@@ -32,8 +26,13 @@ const LoginScreen = () => {
                     />
                 </View>
 
-                <Text style={styles.txtRecoverPwd}>Recuperar usuario o contraseña</Text>
-                
+                <TouchableOpacity
+                    activeOpacity={0.6}
+                    onPress={() => navigation.navigate('RecoverScreen')}
+                >
+                    <Text style={styles.txtRecoverPwd}>Recuperar usuario o contraseña</Text>
+                </TouchableOpacity>
+
                 <View style={{ alignItems: 'center', marginVertical: 34 }}>
                     <Scan width='30' heigth='30' />
                     <Text style={styles.txtIngresar}>Ingresar con huella / facial</Text>
