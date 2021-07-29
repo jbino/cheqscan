@@ -23,7 +23,7 @@ const Button = ({ btnStyle, backgroundColor = '#04C2F0', text, showLoadingIndica
 const styles = StyleSheet.create({
     btn: {
         alignItems: 'center',
-        paddingVertical: 12,
+        paddingVertical: 8,
         borderRadius: 16
     },
     btnText: {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     },
     btnOutline: {
         alignItems: 'center',
-        paddingVertical: 12,
+        paddingVertical: 8,
         borderRadius: 16,
         borderColor: '#006DAA',
         borderWidth: 2

@@ -23,7 +23,7 @@ const Input = ({ icon, isPassword, style, text, ...rest }) => {
                 {isPassword && <RenderPasswordIcon />}
             </View>
             <TextInput
-                style={[styles.TextInput, inputFocus && { borderBottomColor: '#04C2F0' }]}
+                style={[styles.TextInput, inputFocus && { borderWidth: 1, borderColor: '#04C2F0' }]}
                 secureTextEntry={showPassword}
                 onBlur={() => setInputFocus(false)}
                 onFocus={() => setInputFocus(true)}
@@ -41,19 +41,22 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: 'Barlow-Medium',
         fontSize: 14,
-        color: '#969A9E'
+        color: '#969A9E',
+        marginBottom: 10
     },
     TextInput: {
-        borderBottomColor: '#C0C5C9',
-        borderBottomWidth: 1,
         fontSize: 16,
         color: '#585A5C',
-        padding: 6
+        padding: 7,
+        backgroundColor: '#F7F7F7',
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: 'transparent'
     },
     icon: {
         position: 'absolute',
-        right: 0,
-        bottom: 8,
+        right: 10,
+        bottom: 10,
         zIndex: 99
     }
 });

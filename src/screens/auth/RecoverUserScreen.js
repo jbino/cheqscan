@@ -9,7 +9,7 @@ const RecoverUserScreen = ({ navigation }) => {
     const [loading, setLoading] = useState(false);
 
     const RecoverForm = () => (
-        <>
+        <View style={{ justifyContent: 'space-between', flex: 1 }}>
             <Text style={styles.txtTitle}>Recupera tu usuario</Text>
             <Text style={styles.txtDescription}>
                 Ingresa el correo electrónico de tu cuenta para recuperar tu nombre de usuario
@@ -32,7 +32,7 @@ const RecoverUserScreen = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Text style={styles.txtBack}>Regresar</Text>
             </TouchableOpacity>
-        </>
+        </View>
     );
 
     const SuccessRecoverForm = () => (
@@ -80,8 +80,8 @@ const styles = StyleSheet.create({
         color: '#006DAA',
         fontFamily: 'Raleway-Bold',
         fontSize: 22,
-        marginTop: 26,
-        marginBottom: 36,
+        marginTop: 30,
+        marginBottom: 26,
     },
     txtBack: {
         textDecorationLine: 'underline',
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         color: '#585A5C',
         fontFamily: 'Barlow-Medium',
         lineHeight: 20,
-        marginVertical: 36
+        marginBottom: 36
     },
     inputContainer: {
         marginBottom: 36

@@ -6,6 +6,7 @@ import Scan from './Scan';
 import Success from './Success';
 import UserCircle from './UserCircle';
 import User from './User';
+import Key from './Key';
 
 
 export {
@@ -16,5 +17,6 @@ export {
     Scan,
     Success,
     UserCircle,
-    User
+    User,
+    Key
 }

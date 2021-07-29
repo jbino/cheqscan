@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { BannerAuth, Button, FormContainer } from '../../components';
+import { Key, UserCircle } from '../../assets/images/icons';
+import { BannerAuth, BoxContainer, FormContainer } from '../../components';
 
 const RecoverScreen = ({ navigation }) => {
 
@@ -8,20 +9,18 @@ const RecoverScreen = ({ navigation }) => {
         <>
             <BannerAuth />
 
-            <FormContainer style={{ height: '50%' }}>
+            <FormContainer style={{ height: '50%', paddingBottom: 26 }}>
                 <Text style={styles.txtTitle}>Recupera tu usuario o contraseña</Text>
 
-                <View style={styles.btnContainer}>
-                    <Button
+                <View style={styles.rowContainer}>
+                    <BoxContainer
                         text='Recuperar usuario'
-                        btnStyle='outline'
+                        icon={<UserCircle color='#006DAA' />}
                         onPress={() => navigation.navigate('RecoverUserScreen')}
                     />
-                </View>
-                <View style={styles.btnContainer}>
-                    <Button
+                    <BoxContainer
                         text='Recuperar contraseña'
-                        btnStyle='outline'
+                        icon={<Key color='#006DAA' />}
                         onPress={() => navigation.navigate('RecoverPwdScreen')}
                     />
                 </View>
@@ -42,7 +41,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Raleway-Bold',
         fontSize: 22,
         marginTop: 26,
-        marginBottom: 46,
+        marginBottom: 50,
     },
     txtBack: {
         textDecorationLine: 'underline',
@@ -52,6 +51,11 @@ const styles = StyleSheet.create({
     },
     btnContainer: {
         marginBottom: 40
+    },
+    rowContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 'auto'
     }
 });
 

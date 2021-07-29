@@ -43,7 +43,12 @@ const LoginScreen = ({ navigation }) => {
                         backgroundColor='#C0C5CA'
                         text='Iniciar Sesión'
                     />
-                    <Text style={styles.txtAfiliarme}>Afiliarme</Text>
+                    <TouchableOpacity
+                        activeOpacity={0.6}
+                        onPress={() => navigation.navigate('RegisterScreen')}
+                    >
+                        <Text style={styles.txtAfiliarme}>Afiliarme</Text>
+                    </TouchableOpacity>
                 </View>
             </FormContainer>
         </>
@@ -61,7 +66,7 @@ const styles = StyleSheet.create({
         color: '#006DAA',
         textAlign: 'center',
         fontSize: 24,
-        marginVertical: 36,
+        marginVertical: 32,
         fontFamily: 'Raleway-Bold'
     },
     txtRecoverPwd: {

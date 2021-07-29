@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { BannerAuth, Button, FormContainer, Input } from '../../components';
-import { Email, UserCircle } from '../../assets/images/icons';
+import { Email, Key, UserCircle } from '../../assets/images/icons';
 
 const RecoverPwdCodeScreen = ({ navigation }) => {
 
@@ -32,20 +32,15 @@ const RecoverPwdCodeScreen = ({ navigation }) => {
 
                     <View style={styles.inputContainer}>
                         <Input
-                            text='Código enviado a tu email'
-                            icon={<Email />}
-                        />
-                    </View>
-
-                    <View style={styles.inputContainer}>
-                        <Input
                             text='Nueva contraseña'
+                            icon={<Key />}
                         />
                     </View>
 
                     <View style={styles.inputContainer}>
                         <Input
                             text='Verifica tu contraseña'
+                            icon={<Key />}
                         />
                     </View>
 
