@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { BannerAuth, Button, FormContainer, Input, SelectInput } from '../../components';
 
-const RegisterScreen = ({ navigation }) => {
+const RegisterUserDataScreen = ({ navigation }) => {
 
     return (
         <>
@@ -14,29 +14,25 @@ const RegisterScreen = ({ navigation }) => {
                     contentContainerStyle={{ paddingHorizontal: 30 }}
                 >
                     <Text style={styles.txtTitle}>Crea tu cuenta</Text>
-                    <Text style={styles.txtSubTitle}>Información personal</Text>
+                    <Text style={styles.txtSubTitle}>Datos del usuario</Text>
 
                     <View style={styles.inputContainer}>
-                        <SelectInput />
+                        <Input text='Nombre de usuario' />
                     </View>
 
                     <View style={styles.inputContainer}>
-                        <Input text='Identificación' />
+                        <Input text='Correo' />
                     </View>
 
                     <View style={styles.inputContainer}>
-                        <Input text='Nombre' />
-                    </View>
-
-                    <View style={styles.inputContainer}>
-                        <Input text='Apellidos' />
+                        <Input text='Teléfono' />
                     </View>
 
                     <View style={styles.btnContainer}>
                         <Button
                             text='Siguiente'
                             btnStyle='outline'
-                            onPress={() => navigation.navigate('RegisterUserDataScreen')}
+                            onPress={() => navigation.navigate('RegisterUserCodeScreen')}
                         />
                     </View>
 
@@ -82,4 +78,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default RegisterScreen;
+export default RegisterUserDataScreen;

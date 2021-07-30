@@ -4,7 +4,7 @@ import { BannerAuth, Button, ConfirmationInput, FormContainer, Input } from '../
 import { Key, Success } from '../../assets/images/icons';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
-const RecoverPwdCodeScreen = ({ navigation }) => {
+const RegisterUserCodeScreen = ({ navigation }) => {
 
     const [sendPassword, setSendPassword] = useState(false);
     const [valueCode, setValueCode] = useState('');
@@ -15,7 +15,7 @@ const RecoverPwdCodeScreen = ({ navigation }) => {
             <Success style={{ marginBottom: 30 }} />
 
             <Text style={styles.txtSuccess}>
-                Tu nueva contraseña ha sido creada
+                Tu cuenta ha sido creada exitosamente.
             </Text>
 
             <View style={{ marginTop: 30, width: '70%' }}>
@@ -44,11 +44,11 @@ const RecoverPwdCodeScreen = ({ navigation }) => {
                 {!sendPassword ? (
                     <ScrollView
                         showsVerticalScrollIndicator={false}
-                        contentContainerStyle={{ paddingHorizontal: 30 }}
+                        contentContainerStyle={{ paddingHorizontal: 30, flex: 1, justifyContent: 'space-between' }}
                     >
-                        <Text style={styles.txtTitle}>Recupera tu contraseña</Text>
+                        <Text style={styles.txtTitle}>Verifica tu identidad</Text>
                         <Text style={styles.txtDescription}>
-                            Enviamos a tu correo un código temporal. Ingrésalo para cambiar tu contraseña.
+                            Enviamos a tu celular un código temporal. Ingrésalo para verificar tu identidad.
                         </Text>
 
                         <View style={{ marginBottom: 30 }}>
@@ -60,22 +60,12 @@ const RecoverPwdCodeScreen = ({ navigation }) => {
                         </View>
 
                         <View style={styles.inputContainer}>
-                            <Input
-                                text='Nueva contraseña'
-                                icon={<Key />}
-                            />
-                        </View>
-
-                        <View style={styles.inputContainer}>
-                            <Input
-                                text='Verifica tu contraseña'
-                                icon={<Key />}
-                            />
+                            <Text style={{ textAlign: 'center', color: '#969A9E' }}>1:59 para verificar tu información</Text>
                         </View>
 
                         <View style={styles.btnContainer}>
                             <Button
-                                text='Cambiar contraseña'
+                                text='Verificar'
                                 onPress={sendCode}
                                 showLoadingIndicator={loading}
                             />
@@ -131,4 +121,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default RecoverPwdCodeScreen;
+export default RegisterUserCodeScreen;

@@ -1,4 +1,5 @@
 import Email from './Email';
+import DownArrow from './DownArrow';
 import Logo from './Logo';
 import PasswordHidden from './PasswordHidden';
 import PasswordShow from './PasswordShow';
@@ -10,6 +11,7 @@ import Key from './Key';
 
 
 export {
+    DownArrow,
     Email,
     Logo,
     PasswordHidden,

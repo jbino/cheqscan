@@ -9,6 +9,8 @@ import RecoverScreen from '../screens/auth/RecoverScreen';
 import RecoverUserScreen from '../screens/auth/RecoverUserScreen';
 import RecoverPwdScreen from '../screens/auth/RecoverPwdScreen';
 import RecoverPwdCodeScreen from '../screens/auth/RecoverPwdCodeScreen';
+import RegisterUserDataScreen from '../screens/auth/RegisterUserDataScreen';
+import RegisterUserCodeScreen from '../screens/auth/RegisterUserCodeScreen';
 
 const Stack = createStackNavigator();
 
@@ -26,6 +28,8 @@ const AuthStack = () => {
                 <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
                 <Stack.Screen name="RecoverScreen" component={RecoverScreen} />
                 <Stack.Screen name="RecoverUserScreen" component={RecoverUserScreen} />
+                <Stack.Screen name="RegisterUserDataScreen" component={RegisterUserDataScreen} />
+                <Stack.Screen name="RegisterUserCodeScreen" component={RegisterUserCodeScreen} />
                 <Stack.Screen name="RecoverPwdScreen" component={RecoverPwdScreen} />
                 <Stack.Screen name="RecoverPwdCodeScreen" component={RecoverPwdCodeScreen} />
             </Stack.Navigator>
