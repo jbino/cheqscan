@@ -1,3 +1,4 @@
+import CheqScan from './CheqScan';
 import Email from './Email';
 import DownArrow from './DownArrow';
 import Logo from './Logo';
@@ -8,9 +9,10 @@ import Success from './Success';
 import UserCircle from './UserCircle';
 import User from './User';
 import Key from './Key';
-
+import Pencil from './Pencil';
 
 export {
+    CheqScan,
     DownArrow,
     Email,
     Logo,
@@ -20,5 +22,6 @@ export {
     Success,
     UserCircle,
     User,
-    Key
+    Key,
+    Pencil
 }
