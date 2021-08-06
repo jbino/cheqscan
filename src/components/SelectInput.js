@@ -3,7 +3,7 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { DownArrow } from '../assets/images/icons';
 
-const SelectInput = () => {
+const SelectInput = ({ label }) => {
 
     const [value, setValue] = useState('');
     const placeholder = {}
@@ -12,14 +12,12 @@ const SelectInput = () => {
         ios: {
             inputIOS: {
                 fontSize: 16,
-                paddingVertical: 12,
                 paddingHorizontal: 10,
-                borderWidth: 1,
-                borderColor: 'gray',
-                borderRadius: 4,
-                color: 'black',
-                backgroundColor: 'red',
-                paddingRight: 30
+                paddingVertical: 8,
+                borderRadius: 8,
+                backgroundColor: '#F7F7F7',
+                color: '#000',
+                paddingRight: 30,
             },
         },
         android: {
@@ -37,7 +35,7 @@ const SelectInput = () => {
 
     return (
         <>
-            <Text style={styles.text}>Tipo de documento</Text>
+            <Text style={styles.text}>{label}</Text>
             <RNPickerSelect
                 placeholder={placeholder}
                 onValueChange={setValue}

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Button = ({ btnStyle, backgroundColor = '#04C2F0', text, showLoadingIndicator, ...rest }) => {
+const Button = ({ btnStyle, backgroundColor = '#04C2F0', text, leftIcon, showLoadingIndicator, ...rest }) => {
 
     return (
         <TouchableOpacity
@@ -10,9 +10,12 @@ const Button = ({ btnStyle, backgroundColor = '#04C2F0', text, showLoadingIndica
             {...rest}
         >
             {!showLoadingIndicator &&
-                <Text style={btnStyle === 'outline' ? styles.btnTextOutline : styles.btnText}>
-                    {text}
-                </Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    {leftIcon && <View style={{ marginRight: 8 }}>{leftIcon}</View>}
+                    <Text style={btnStyle === 'outline' ? styles.btnTextOutline : styles.btnText}>
+                        {text}
+                    </Text>
+                </View>
             }
             {showLoadingIndicator && <ActivityIndicator size={26} color='#fff' />}
         </TouchableOpacity>
@@ -24,7 +27,8 @@ const styles = StyleSheet.create({
     btn: {
         alignItems: 'center',
         paddingVertical: 8,
-        borderRadius: 16
+        borderRadius: 16,
+        width: 'auto'
     },
     btnText: {
         fontFamily: 'Barlow-Regular',
@@ -41,7 +45,8 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         borderRadius: 16,
         borderColor: '#006DAA',
-        borderWidth: 2
+        borderWidth: 2,
+        width: 'auto'
     }
 });
 

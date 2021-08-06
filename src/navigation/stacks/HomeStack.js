@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
 import HomeScreen from '../../screens/home/HomeScreen';
+import DepositarStack from './DepositarStack';
 
 const Stack = createStackNavigator();
 

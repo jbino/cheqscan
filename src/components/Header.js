@@ -7,7 +7,6 @@ const Header = () => {
     return (
         <View style={styles.header}>
             <CheqScan />
-            
         </View>
     );
 }
