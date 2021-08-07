@@ -1,42 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Pencil, Plus, Star, Trash } from '../../assets/images/icons';
-import { Button, Card, Container } from '../../components';
+import { Button, Card, Container, SimplePaginationDot } from '../../components';
+import Carousel from 'react-native-snap-carousel';
 
 const CuentaScreen = ({ navigation }) => {
+
+    const [activeSlide, setActiveSlide] = useState(0);
+
+    const CuentaCard = () => (        
+        <Card style={{ marginTop: 20 }}>
+            <Container row justifyContent='space-between'>
+                <Text style={styles.txtBold}>Mi cuenta</Text>
+                <Container row>
+                    <Pencil style={{ marginRight: 12 }} />
+                    <Star />
+                </Container>
+            </Container>
+
+            <View style={styles.divider} />
+
+            <Container row justifyContent='space-between'>
+                <Text style={styles.txtLigth}>Banco</Text>
+                <Text style={styles.txtBold}>Banco Pichincha</Text>
+            </Container>
+
+            <View style={styles.divider} />
+
+            <Container row justifyContent='space-between'>
+                <Text style={styles.txtLigth}>Cuenta de ahorros</Text>
+                <Text style={styles.txtBold}>123456789</Text>
+            </Container>
+
+            <View style={styles.divider} />
+
+            <Trash style={{ alignSelf: 'flex-end' }} />
+        </Card>
+    );
+
     return (
         <ScrollView>
             <Container style={{ marginVertical: 20 }}>
                 <Text style={styles.txtTitle}>Mis cuentas</Text>
 
-                <Card style={{ marginTop: 20 }}>
-                    <Container row justifyContent='space-between'>
-                        <Text style={styles.txtBold}>Mi cuenta</Text>
-                        <Container row>
-                            <Pencil style={{ marginRight: 12 }} />
-                            <Star />
-                        </Container>
-                    </Container>
+                <View style={{ alignItems: 'center' }}>
+                    <Carousel
+                        data={Array(3).fill(0)}
+                        renderItem={() => <CuentaCard />}
+                        onSnapToItem={(index) => setActiveSlide(index)}
+                        sliderWidth={400}
+                        itemWidth={310}
+                    />
 
-                    <View style={styles.divider} />
-
-                    <Container row justifyContent='space-between'>
-                        <Text style={styles.txtLigth}>Banco</Text>
-                        <Text style={styles.txtBold}>Banco Pichincha</Text>
-                    </Container>
-
-                    <View style={styles.divider} />
-
-                    <Container row justifyContent='space-between'>
-                        <Text style={styles.txtLigth}>Cuenta de ahorros</Text>
-                        <Text style={styles.txtBold}>123456789</Text>
-                    </Container>
-
-                    <View style={styles.divider} />
-
-                    <Trash style={{ alignSelf: 'flex-end' }} />
-                </Card>
+                    <SimplePaginationDot activeSlide={activeSlide} entries={Array(3).fill(0)} />
+                </View>
 
                 <View style={styles.btnContainer}>
                     <Button

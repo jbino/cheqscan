@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Button, Card, Container, Header, Input, SelectInput } from '../../components';
 
 const VerificarDeposito = ({ navigation, route }) => {
@@ -62,7 +62,12 @@ const VerificarDeposito = ({ navigation, route }) => {
 
                 <Button text='Tomar fotos de nuevo' btnStyle='outline' onPress={() => navigation.goBack()} />
 
-                <Text style={styles.txtCancelar}>Cancelar depósito</Text>
+                <TouchableOpacity
+                    activeOpacity={0.6}
+                    onPress={() => navigation.popToTop()}
+                >
+                    <Text style={styles.txtCancelar}>Cancelar depósito</Text>
+                </TouchableOpacity>
             </Container>
         </ScrollView>
     );

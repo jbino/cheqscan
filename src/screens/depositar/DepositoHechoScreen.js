@@ -63,20 +63,31 @@ const DepositoHechoScreen = ({ navigation }) => {
                 />
 
                 <Container row justifyContent='space-between' style={{ marginVertical: 26 }}>
-                    <BoxContainer
-                        icon={<Share />}
-                        text='Compartir comprobante'
-                    />
-                    <BoxContainer
-                        icon={<Finance color='#006DAA' width={32} height={32} />}
-                        text='Ver historial de depósitos'
-                        onPress={() => navigation.navigate('HistorialStack')}
-                    />
-                    <BoxContainer
-                        icon={<Home color='#006DAA' width={32} height={32} />}
-                        text='Ir al inicio'
-                        onPress={() => navigation.navigate('HomeStack')}
-                    />
+                    <View>
+                        <BoxContainer
+                            icon={<Share />}
+                            text='Compartir comprobante'
+                            size={105}
+                        />
+                    </View>
+
+                    <View>
+                        <BoxContainer
+                            icon={<Finance color='#006DAA' width={32} height={32} />}
+                            text='Historial de depósitos'
+                            onPress={() => navigation.navigate('HistorialStack')}
+                            size={105}
+                        />
+                    </View>
+
+                    <View>
+                        <BoxContainer
+                            icon={<Home color='#006DAA' width={32} height={32} />}
+                            text='Ir al inicio'
+                            onPress={() => navigation.navigate('HomeStack')}
+                            size={105}
+                        />
+                    </View>
                 </Container>
 
             </Container>

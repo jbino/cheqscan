@@ -13,7 +13,10 @@ const CuentaAgregadaScreen = ({ navigation }) => {
                     <Text>Has agregado tu cuenta</Text>
 
                     <View style={{ width: '70%' }}>
-                        <Button text='Realizar depósito' />
+                        <Button
+                            text='Realizar depósito'
+                            onPress={() => navigation.navigate('DepositarStack')}
+                        />
                     </View>
                 </Card>
 

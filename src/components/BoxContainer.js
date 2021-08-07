@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Barlow-Regular',
         lineHeight: 16,
         fontSize: 12,
-        marginTop: 10
+        marginTop: 'auto'
     }
 });
 

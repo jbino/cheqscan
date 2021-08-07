@@ -75,7 +75,6 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontFamily: 'Raleway-Medium',
         fontSize: 20,
-        lineHeight: 50,
     },
     circle: {
         marginBottom: 14,
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: 40,
         height: 40,
-        borderRadius: 40 / 2,
+        borderRadius: 40 / 2
     },
     divider: {
         width: '100%',
